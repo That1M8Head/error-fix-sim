@@ -21,6 +21,8 @@ while command != "exit":
         print("Filesystem is empty.")
     elif command == "init":
         print("Could not find system library libmain.o.")
+    elif command.split(" ")[0] in ("sfc", "chkdsk", "scandisk"):
+        print("This is not DOS!")
     elif command == "":
         pass
     else:
