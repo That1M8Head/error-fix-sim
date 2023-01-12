@@ -25,6 +25,8 @@ while command != "exit":
         print("This is not DOS!")
     elif command in ("", "exit"):
         pass
+	elif command == "help":
+		print("dir exit help init ls")
     else:
-        print(f"{command} is an unknown command.")
+        print(f"{command.split()[0]} is an unknown command.")
 print("Powering off system.")
