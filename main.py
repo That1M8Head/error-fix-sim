@@ -37,6 +37,8 @@ while command != "exit":
         pass
     elif command == "help":
         print("dir exit help init ls")
+    elif ":q" in command:
+        print("This is not vi!")
     else:
         print(f"{command.split()[0]} is an unknown command.")
 print("Powering off system.")
