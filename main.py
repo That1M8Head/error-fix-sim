@@ -1,15 +1,21 @@
-# Error Fixing Simulator - by Arsalan Kazmi
-# A small program that simulates a computer that can't start up.
+"""
+Error Fixing Simulator - by Arsalan Kazmi
+A small program that simulates a computer that can't start up.
+"""
 
 from time import sleep
 from os import listdir
 from os.path import isfile
 
-def BootMainSystem():
+def boot_main_system():
+    """
+    Load the VBOS (Very Broken Operating System) init script.
+    In actuality this just breaks (on purpose ofc)
+    """
     print("Loading main system.")
     sleep(4.5)
     if isfile("libmain.o"):
-        print("System loaded successfully.");
+        print("System loaded successfully.")
     else:
         print("Could not find system library libmain.o.")
         print()
@@ -20,7 +26,7 @@ print("Loading VBOS...")
 sleep(2)
 print("Mounting drives and filesystems...")
 sleep(2.5)
-BootMainSystem()
+boot_main_system()
 print("Dropping to recovery shell.")
 print()
 command = ""
@@ -30,7 +36,7 @@ while command != "exit":
         for x in listdir():
             print(x)
     elif command == "init":
-        BootMainSystem()
+        boot_main_system()
     elif command.split()[0] in ("sfc", "chkdsk", "scandisk"):
         print("This is not DOS!")
     elif command in ("", "exit"):
